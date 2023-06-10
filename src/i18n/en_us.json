@@ -1,1 +1,12 @@
-{}
+{
+  "nav": {
+    "change-theme-button": "Themes",
+    "pages": {
+      "about": "About",
+      "rules": "Rules",
+      "status": "Status",
+      "blog": "Blog",
+      "faq": "FAQ"
+    }
+  }
+}
