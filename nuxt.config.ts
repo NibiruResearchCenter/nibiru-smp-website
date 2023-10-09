@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxt/ui", "nuxt-directus", "@vueuse/nuxt"],
+  modules: ["nuxt-directus", "@vueuse/nuxt", "@nuxtjs/tailwindcss"],
   runtimeConfig: {
     directus: {
       url: "https://directus.nibiru.live",
