@@ -2,9 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["nuxt-directus", "@vueuse/nuxt", "@nuxtjs/tailwindcss"],
-  runtimeConfig: {
-    directus: {
-      url: "https://directus.nibiru.live",
-    },
+  directus: {
+    url: "https://directus.nibiru.live",
   },
 });
