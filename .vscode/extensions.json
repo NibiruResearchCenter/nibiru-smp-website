@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "lokalise.i18n-ally",
+        "vue.volar",
+        "vue.vscode-typescript-vue-plugin",
+        "bradlc.vscode-tailwindcss",
+        "dbaeumer.vscode-eslint"
+    ]
+}
