@@ -55,7 +55,13 @@ const availableLocales = computed(
               >
                 {{ availableLocale.code }}
               </span>
-              <span>
+              <span
+                :class="
+                  availableLocale.code === 'nbr-NBR'
+                    ? 'nibiru-font'
+                    : 'font-sans'
+                "
+              >
                 {{ availableLocale.name }}
               </span>
             </button>

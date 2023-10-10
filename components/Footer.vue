@@ -40,7 +40,7 @@ const fetchDisclaimer = async () => {
     params: {
       filter: {
         languages_code: {
-          _eq: locale.value,
+          _eq: useRealLocaleCode(locale.value),
         },
       },
     },
@@ -78,7 +78,7 @@ onMounted(async () => {
         </div>
       </div>
       <p class="text-md">Nibiru SMP</p>
-      <p class="text-sm">
+      <p class="text-sm font-sans">
         {{ icp?.name }} <br />
         <a class="link link-hover" href="https://beian.miit.gov.cn/">
           {{ icp?.icp }}

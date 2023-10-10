@@ -9,5 +9,6 @@ export default defineI18nConfig(() => ({
   messages: {
     "en-US": enUS,
     "zh-CN": zhCN,
+    "nbr-NBR": enUS,
   },
 }));

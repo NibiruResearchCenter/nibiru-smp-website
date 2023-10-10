@@ -12,6 +12,7 @@ export default defineNuxtConfig({
   },
   i18n: {
     vueI18n: "./i18n.config.ts",
+    strategy: "no_prefix",
     locales: [
       {
         code: "en-US",
@@ -20,6 +21,10 @@ export default defineNuxtConfig({
       {
         code: "zh-CN",
         name: "简体中文",
+      },
+      {
+        code: "nbr-NBR",
+        name: "Nibiru",
       },
     ],
   },
