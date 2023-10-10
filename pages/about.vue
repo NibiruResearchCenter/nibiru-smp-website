@@ -35,6 +35,8 @@ const { data } = await useAsyncData(
 
 <template>
   <main>
-    <ContentArticleArea :content="data" />
+    <ContentArticleArea>
+      <ContentMarkdownText :content="data" />
+    </ContentArticleArea>
   </main>
 </template>

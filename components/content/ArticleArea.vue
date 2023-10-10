@@ -1,9 +1,3 @@
-<script setup lang="ts">
-defineProps<{
-  content: string | null | undefined;
-}>();
-</script>
-
 <template>
   <div class="min-h-screen">
     <div class="pt-16" />
@@ -12,7 +6,7 @@ defineProps<{
         <article
           class="max-w-none text-base-content prose prose-h1:text-center prose-headings:underline hover:prose-a:text-blue-500 dark:prose-invert md:prose-lg lg:prose-xl"
         >
-          <ContentMarkdownText :content="content" />
+          <slot />
         </article>
       </div>
     </div>
