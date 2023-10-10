@@ -74,7 +74,7 @@ onMounted(async () => {
     <div>
       <div class="avatar">
         <div class="w-24 rounded-full">
-          <img alt="Nibiru Logo" src="nibiru-logo.png" />
+          <img alt="Nibiru Logo" src="~/assets/images/nibiru-logo.webp" />
         </div>
       </div>
       <p class="text-md">Nibiru SMP</p>
