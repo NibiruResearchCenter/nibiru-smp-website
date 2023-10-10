@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.md    text eol=crlf
+
+*.png   binary
+*.webp  binary
+*.jpg   binary
+*.gif   binary
