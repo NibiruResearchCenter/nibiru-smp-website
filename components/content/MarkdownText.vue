@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  content: string | null;
+  content: string | null | undefined;
 }>();
 </script>
 
@@ -8,6 +8,9 @@ defineProps<{
 <template>
   <span v-if="content === null">
     <Loading infinity-size="lg" text-size="md" />
+  </span>
+  <span v-else-if="content === undefined">
+    <p>{{ $t("no_translation") }}</p>
   </span>
   <span v-else v-html="$mdRenderer.render(content)" />
 </template>

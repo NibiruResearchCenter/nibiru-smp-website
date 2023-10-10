@@ -27,7 +27,7 @@ onMounted(async () => {
 
 <template>
   <div
-    class="bg-blend-overlay bg-cover bg-center bg-base-200 min-h-screen"
+    class="bg-blend-overlay bg-cover bg-center bg-base-200 bg-opacity-70 min-h-screen"
     :style="{ 'background-image': 'url(' + useDirectusAsset(image) + ')' }"
   >
     <header>
