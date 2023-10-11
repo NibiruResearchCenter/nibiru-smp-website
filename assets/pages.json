@@ -18,5 +18,9 @@
   {
     "path": "/status",
     "key": "pages.status"
+  },
+  {
+    "path": "/poi",
+    "key": "pages.poi"
   }
 ]
