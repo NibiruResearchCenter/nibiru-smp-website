@@ -3,22 +3,6 @@ import pages from "~/assets/pages.json";
 
 const { getItems, getSingletonItem } = useDirectusItems();
 
-interface ExternalLink {
-  name: string;
-  url: string;
-  icon: string;
-}
-
-interface DisclaimerTranslation {
-  language_code: string;
-  disclaimer: string;
-}
-
-interface IcpPutOn {
-  name: string;
-  icp: string;
-}
-
 const externalLinks = ref<ExternalLink[]>([]);
 
 const fetchExternalLinks = async () => {

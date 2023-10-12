@@ -1,12 +1,8 @@
 <script setup lang="ts">
 const { getItems } = useDirectusItems();
 
-interface SightFile {
-  directus_files_id: string;
-}
-
 const fetchSights = async () => {
-  const sights = await getItems<SightFile>({
+  const sights = await getItems<DirectusFile>({
     collection: "nibiru_smp_sights_files",
     params: {
       fields: ["directus_files_id"],

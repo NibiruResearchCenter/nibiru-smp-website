@@ -31,3 +31,24 @@ export interface NibiruSmpPoi {
   gallery: DirectusFile[];
   cover_image: DirectusSingleImage;
 }
+
+export interface ExternalLink {
+  name: string;
+  url: string;
+  icon: string;
+}
+
+export interface DisclaimerTranslation {
+  language_code: string;
+  disclaimer: string;
+}
+
+export interface IcpPutOn {
+  name: string;
+  icp: string;
+}
+
+export interface AboutTranslation {
+  language_code: string;
+  content: string;
+}

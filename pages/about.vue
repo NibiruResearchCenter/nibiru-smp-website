@@ -2,11 +2,6 @@
 const { getItems } = useDirectusItems();
 const { locale } = useI18n();
 
-interface AboutTranslation {
-  language_code: string;
-  content: string;
-}
-
 const fetchAbout = async () => {
   const data = await getItems<AboutTranslation>({
     collection: "nibiru_smp_about_translations",

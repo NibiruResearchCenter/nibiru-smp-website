@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { NibiruSmpPoi } from "~/utils/directus-model";
-
 const { getItemById } = useDirectusItems();
 const { locale } = useI18n();
 
