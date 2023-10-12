@@ -10,6 +10,8 @@
   "poi": {
     "title": "Point of Interest"
   },
+  "position": "Position",
+  "minecraft_coordinate": "Minecraft Coordinate (X, Y, Z)",
   "authors": "Authors",
   "created_at": "Created at",
   "updated_at": "Updated at",

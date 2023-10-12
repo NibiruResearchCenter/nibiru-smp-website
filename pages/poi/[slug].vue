@@ -106,6 +106,14 @@ const gallery = computed(() => {
               </div>
               <div class="m1 my-3">
                 <h1 class="text-white text-xl font-bold">
+                  {{ $t("position") }}
+                </h1>
+                <span class="badge badge-outline my-1 text-slate-200">
+                  {{ data.x }}, {{ data.y }}, {{ data.z }}
+                </span>
+              </div>
+              <div class="m1 my-3">
+                <h1 class="text-white text-xl font-bold">
                   {{ $t("created_at") }}
                 </h1>
                 <span class="badge badge-outline my-1 text-slate-200">

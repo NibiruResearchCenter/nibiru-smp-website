@@ -16,13 +16,13 @@ defineProps<{
       <p>{{ poi.translations[0].short_summary }}</p>
       <div class="card-actions justify-end">
         <div>
-          <div class="tooltip" data-tip="Minecraft Coordinate (X, Y, Z)">
+          <div class="tooltip" :data-tip="$t('minecraft_coordinate')">
             <div class="badge badge-outline">
               {{ poi.x }}, {{ poi.y }}, {{ poi.z }}
             </div>
           </div>
           <NuxtLink
-            class="btn btn-outline btn-sm ml-4 mr-1"
+            class="btn btn-outline btn-xs rounded-full ml-4 mr-1"
             :to="`/poi/` + poi.slug"
           >
             Detail

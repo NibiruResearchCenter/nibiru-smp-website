@@ -10,6 +10,8 @@
   "poi": {
     "title": "奇观"
   },
+  "position": "坐标",
+  "minecraft_coordinate": "Minecraft 坐标 (X, Y, Z)",
   "authors": "作者",
   "created_at": "创建于",
   "updated_at": "更新于",
