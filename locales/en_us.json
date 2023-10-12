@@ -1,10 +1,12 @@
 {
-  "pages.about": "About",
-  "pages.rules": "Rules",
-  "pages.faq": "FAQ",
-  "pages.posts": "Posts",
-  "pages.status": "Status",
-  "pages.poi": "POI",
+  "pages": {
+    "about": "About",
+    "posts": "Posts",
+    "status": "Status",
+    "poi": "POI"
+  },
+  "rules": "Rules",
+  "faq": "FAQ",
   "poi.title": "Point of Interest",
   "disclaimer": "Disclaimer",
   "nibiru_project": "Nibiru Project",

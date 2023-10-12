@@ -4,14 +4,6 @@
     "key": "pages.about"
   },
   {
-    "path": "/rules",
-    "key": "pages.rules"
-  },
-  {
-    "path": "/faq",
-    "key": "pages.faq"
-  },
-  {
     "path": "/posts",
     "key": "pages.posts"
   },

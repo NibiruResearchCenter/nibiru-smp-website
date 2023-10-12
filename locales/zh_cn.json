@@ -1,10 +1,12 @@
 {
-  "pages.about": "关于",
-  "pages.rules": "规则",
-  "pages.faq": "FAQ",
-  "pages.posts": "日志",
-  "pages.status": "状态",
-  "pages.poi": "景点",
+  "pages": {
+    "about": "关于",
+    "posts": "日志",
+    "status": "状态",
+    "poi": "奇观"
+  },
+  "rules": "规则",
+  "faq": "FAQ",
   "disclaimer": "声明",
   "nibiru_project": "尼比陆",
   "no_translation": "抱歉，该内容在当前语言下不存在。"
