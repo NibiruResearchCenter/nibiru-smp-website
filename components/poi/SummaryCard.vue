@@ -12,7 +12,7 @@ defineProps<{
       <img :src="useDirectusAsset(poi.cover_image.id)" alt="cover image" />
     </figure>
     <div class="card-body">
-      <h2 class="card-title">{{ poi.translations[0].name }}</h2>
+      <h2 class="card-title text-white">{{ poi.translations[0].name }}</h2>
       <p>{{ poi.translations[0].short_summary }}</p>
       <div class="card-actions justify-end">
         <div>

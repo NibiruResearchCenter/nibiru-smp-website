@@ -7,6 +7,12 @@
   },
   "rules": "规则",
   "faq": "FAQ",
+  "poi": {
+    "title": "奇观"
+  },
+  "authors": "作者",
+  "created_at": "创建于",
+  "updated_at": "更新于",
   "disclaimer": "声明",
   "nibiru_project": "尼比陆",
   "no_translation": "抱歉，该内容在当前语言下不存在。"

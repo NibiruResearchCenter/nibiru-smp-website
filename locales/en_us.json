@@ -7,7 +7,12 @@
   },
   "rules": "Rules",
   "faq": "FAQ",
-  "poi.title": "Point of Interest",
+  "poi": {
+    "title": "Point of Interest"
+  },
+  "authors": "Authors",
+  "created_at": "Created at",
+  "updated_at": "Updated at",
   "disclaimer": "Disclaimer",
   "nibiru_project": "Nibiru Project",
   "no_translation": "Sorry, this content is not available in your language."

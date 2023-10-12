@@ -8,5 +8,6 @@
     "editor.formatOnSave": true,
     "i18n-ally.localesPaths": [
         "locales"
-    ]
+    ],
+    "i18n-ally.keystyle": "nested"
 }

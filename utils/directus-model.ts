@@ -1,5 +1,18 @@
+export interface DirectusTimestamp {
+  date_created: string;
+  date_updated: string;
+}
 export interface DirectusFile {
   directus_files_id: string;
+}
+
+export interface DirectusFileDetailContent {
+  id: string;
+  uploaded_on: string;
+}
+
+export interface DirectusFileDetail {
+  directus_files_id: DirectusFileDetailContent;
 }
 
 export interface DirectusSingleImage {
@@ -19,16 +32,17 @@ export interface NibiruSmpPoiTranslations {
   name: string;
   short_summary: string;
   description: string;
+  tags: string[];
 }
 
-export interface NibiruSmpPoi {
+export interface NibiruSmpPoi extends DirectusTimestamp {
   slug: string;
   translations: NibiruSmpPoiTranslations[];
   x: number;
   y: number;
   z: number;
   authors: MinecraftIdPairLink[];
-  gallery: DirectusFile[];
+  gallery: DirectusFileDetail[];
   cover_image: DirectusSingleImage;
 }
 

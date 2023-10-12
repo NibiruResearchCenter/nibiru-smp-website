@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { NibiruSmpPoi } from "~/utils/directus-model";
+
 const { getItemById } = useDirectusItems();
 const { locale } = useI18n();
 
@@ -11,14 +13,18 @@ const fetchPoi = async () => {
     params: {
       fields: [
         "slug",
+        "date_created",
+        "date_updated",
         "translations.name",
         "translations.short_summary",
         "translations.description",
+        "translations.tags",
         "x",
         "y",
         "z",
         "cover_image.id",
-        "gallery.directus_files_id",
+        "gallery.directus_files_id.id",
+        "gallery.directus_files_id.uploaded_on",
         "authors.minecraft_id_pair_id.*",
       ],
       deep: {
@@ -39,7 +45,7 @@ const { data } = await useAsyncData("nibiru_smp_poi_single", () => fetchPoi(), {
 });
 
 const gallery = computed(() => {
-  const gallery: { id: number; file_id: string }[] = [];
+  const gallery: { id: number; file_id: string; time: string }[] = [];
 
   if (data.value === null) {
     return gallery;
@@ -49,7 +55,8 @@ const gallery = computed(() => {
   for (const image of data.value.gallery) {
     gallery.push({
       id: i,
-      file_id: image.directus_files_id,
+      file_id: image.directus_files_id.id,
+      time: image.directus_files_id.uploaded_on,
     });
     i++;
   }
@@ -65,30 +72,106 @@ const gallery = computed(() => {
         <Loading text-size="xl" infinity-size="lg" />
       </div>
       <div v-else>
-        <div
-          v-for="image in gallery"
-          :key="image.id"
-          class="carousel w-full rounded-2xl"
-        >
-          <div :id="'slide' + image.id" class="carousel-item relative w-full">
+        <div class="carousel w-full rounded-2xl">
+          <div
+            v-for="image in gallery"
+            :id="'slide' + image.id"
+            :key="image.id"
+            class="carousel-item relative w-full"
+          >
             <img :src="useDirectusAsset(image.file_id)" class="w-full" />
+            <div class="absolute bottom-4 right-8">
+              <span class="badge badge-sm uppercase">
+                Shot On {{ useFormattedDatetime(image.time) }}
+              </span>
+            </div>
             <div
               class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
             >
               <a
-                v-if="image.id !== 1"
                 :href="'#slide' + (image.id - 1)"
-                class="btn btn-ghost"
+                :class="
+                  'btn btn-ghost ' +
+                  (image.id === 1
+                    ? 'pointer-events-none cursor-not-allowed'
+                    : '')
+                "
               >
                 ❮
               </a>
               <a
-                v-if="image.id !== gallery.length"
                 :href="'#slide' + (image.id + 1)"
-                class="btn btn-ghost"
+                :class="
+                  'btn btn-ghost ' +
+                  (image.id === gallery.length
+                    ? 'pointer-events-none cursor-not-allowed'
+                    : '')
+                "
               >
                 ❯
               </a>
+            </div>
+          </div>
+        </div>
+        <div class="pt-4">
+          <div class="lg:grid lg:grid-flow-row lg:grid-cols-4">
+            <div
+              class="col-span-3 bg-base-300 bg-opacity-90 p-8 my-4 rounded-2xl"
+            >
+              <h1 class="text-3xl font-bold text-white mb-4">
+                POI: {{ data.translations[0].name }}
+              </h1>
+              <article>
+                <ContentMarkdownText
+                  class="prose md:prose-md lg:prose-lg text-white"
+                  :content="data.translations[0].description"
+                />
+              </article>
+            </div>
+            <div class="bg-base-300 bg-opacity-80 p-4 m-2 rounded-2xl">
+              <div class="mx-1 my-3">
+                <h1 class="text-white text-xl font-bold">
+                  {{ $t("authors") }}
+                </h1>
+                <div
+                  v-for="author in data.authors"
+                  :key="author.minecraft_id_pair_id.username"
+                  class="my-2 text-slate-100"
+                >
+                  <PoiMinecraftAvatar
+                    :username="author.minecraft_id_pair_id.username"
+                    :uuid="author.minecraft_id_pair_id.uuid"
+                  />
+                </div>
+              </div>
+              <div class="m1 my-3">
+                <h1 class="text-white text-xl font-bold">
+                  {{ $t("created_at") }}
+                </h1>
+                <span class="badge badge-outline my-1 text-slate-200">
+                  {{ useFormattedDatetime(data.date_created) }}
+                </span>
+              </div>
+              <div class="m-1 my-3">
+                <h1 class="text-white text-xl font-bold">
+                  {{ $t("updated_at") }}
+                </h1>
+                <span class="badge badge-outline my-1 text-slate-200">
+                  {{ useFormattedDatetime(data.date_created) }}
+                </span>
+              </div>
+              <div class="m-1 my-3">
+                <h1 class="text-white text-xl font-bold my-2">Tags</h1>
+                <div class="flex flex-wrap">
+                  <span
+                    v-for="tag in data.translations[0].tags"
+                    :key="tag"
+                    class="badge badge-outline m-1 text-slate-200"
+                  >
+                    {{ tag }}
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
