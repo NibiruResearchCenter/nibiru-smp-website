@@ -1,57 +1,52 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   gallery: { id: number; file_id: string; time: string }[];
 }>();
 
 const imageId = ref(1);
 
 const nextImage = () => {
-  imageId.value++;
+  if (props.gallery.length === imageId.value) {
+    imageId.value = 1;
+  } else {
+    imageId.value++;
+  }
 };
 
 const prevImage = () => {
-  imageId.value--;
+  if (imageId.value === 1) {
+    imageId.value = props.gallery.length;
+  } else {
+    imageId.value--;
+  }
 };
 </script>
 
 <template>
   <div>
-    <div class="relative w-full inline-block">
-      <img
-        :key="gallery[imageId].file_id"
-        :src="useDirectusAsset(gallery[imageId].file_id)"
-        class="w-full rounded-2xl"
-      />
+    <div class="relative w-full overflow-hidden aspect-video rounded-2xl">
+      <div
+        class="flex absolute h-full transition-all duration-1000 ease-in-out"
+        :style="{ left: `-${(imageId - 1) * 100}%` }"
+      >
+        <img
+          v-for="image in gallery"
+          :key="image.id"
+          :src="useDirectusAsset(image.file_id)"
+          class="w-full"
+        />
+      </div>
+
       <div class="absolute bottom-4 right-8">
         <span class="badge badge-sm uppercase">
-          Shot On {{ useFormattedDatetime(gallery[imageId].time) }}
+          Shot On {{ useFormattedDatetime(gallery[imageId - 1].time) }}
         </span>
       </div>
       <div
         class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2"
       >
-        <button
-          :class="
-            'btn btn-ghost ' +
-            (gallery[imageId].id === 1
-              ? 'pointer-events-none cursor-not-allowed'
-              : '')
-          "
-          @click="prevImage"
-        >
-          ❮
-        </button>
-        <button
-          :class="
-            'btn btn-ghost ' +
-            (gallery[imageId].id === gallery.length
-              ? 'pointer-events-none cursor-not-allowed'
-              : '')
-          "
-          @click="nextImage"
-        >
-          ❯
-        </button>
+        <button class="btn btn-ghost" @click="prevImage">❮</button>
+        <button class="btn btn-ghost" @click="nextImage">❯</button>
       </div>
     </div>
   </div>

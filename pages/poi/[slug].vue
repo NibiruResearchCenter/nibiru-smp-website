@@ -88,7 +88,7 @@ const gallery = computed(() => {
                 />
               </article>
             </div>
-            <div class="bg-base-300 bg-opacity-80 p-4 m-2 rounded-2xl">
+            <div class="bg-base-300 bg-opacity-80 p-4 mx-2 my-4 rounded-2xl">
               <div class="mx-1 my-3">
                 <h1 class="text-white text-xl font-bold">
                   {{ $t("authors") }}
@@ -104,7 +104,7 @@ const gallery = computed(() => {
                   />
                 </div>
               </div>
-              <div class="m1 my-3">
+              <div class="m-1 my-3">
                 <h1 class="text-white text-xl font-bold">
                   {{ $t("position") }}
                 </h1>
@@ -112,7 +112,7 @@ const gallery = computed(() => {
                   {{ data.x }}, {{ data.y }}, {{ data.z }}
                 </span>
               </div>
-              <div class="m1 my-3">
+              <div class="m-1 my-3">
                 <h1 class="text-white text-xl font-bold">
                   {{ $t("created_at") }}
                 </h1>
