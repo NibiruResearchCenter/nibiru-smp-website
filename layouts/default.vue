@@ -17,18 +17,20 @@ const fetchSights = async () => {
 };
 
 const images = ref<string[]>([]);
-const image = ref<string>("");
 
-onMounted(async () => {
+const image = computedAsync(async () => {
   images.value = await fetchSights();
-  image.value = images.value[Math.floor(Math.random() * images.value.length)];
+  return images.value[Math.floor(Math.random() * images.value.length)];
 });
 </script>
 
 <template>
   <div
     class="bg-blend-overlay bg-cover bg-center bg-base-200 bg-opacity-70 min-h-screen"
-    :style="{ 'background-image': 'url(' + useDirectusAsset(image) + ')' }"
+    :style="{
+      backgroundImage:
+        image !== undefined ? `url(${useDirectusAsset(image)})` : 'none',
+    }"
   >
     <header>
       <NavigationNavbar />
