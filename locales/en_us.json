@@ -9,8 +9,11 @@
   "faq": "FAQ",
   "title": {
     "poi": "Point of Interest",
+    "posts": "Posts",
+    "status": "Server Status",
     "about": "About Nibiru SMP"
   },
+  "comming_soon": "Comming Soon",
   "position": "Position",
   "minecraft_coordinate": "Minecraft Coordinate (X, Y, Z)",
   "authors": "Authors",

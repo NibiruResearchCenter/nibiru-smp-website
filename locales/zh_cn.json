@@ -9,8 +9,11 @@
   "faq": "FAQ",
   "title": {
     "poi": "奇观",
+    "posts": "日志",
+    "status": "服务器状态",
     "about": "关于 Nibiru SMP"
   },
+  "comming_soon": "即将上线",
   "position": "坐标",
   "minecraft_coordinate": "Minecraft 坐标 (X, Y, Z)",
   "authors": "作者",
