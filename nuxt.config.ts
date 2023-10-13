@@ -28,4 +28,9 @@ export default defineNuxtConfig({
       },
     ],
   },
+  runtimeConfig: {
+    public: {
+      version: process.env.NBR_SMP_WEBSITE_VERSION ?? "v0.0.0",
+    },
+  },
 });

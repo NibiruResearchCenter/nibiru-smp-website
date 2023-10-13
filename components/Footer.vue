@@ -51,6 +51,8 @@ onMounted(async () => {
   icp.value = await fetchIcp();
   externalLinks.value = await fetchExternalLinks();
 });
+
+const version = useRuntimeConfig().public.version;
 </script>
 
 <template>
@@ -61,7 +63,7 @@ onMounted(async () => {
           <img alt="Nibiru Logo" src="~/assets/images/nibiru-logo.webp" />
         </div>
       </div>
-      <p class="text-md">Nibiru SMP</p>
+      <p class="text-md">Nibiru SMP {{ version }}</p>
       <p class="text-sm font-sans">
         {{ icp?.name }} <br />
         <a class="link link-hover" href="https://beian.miit.gov.cn/">
@@ -78,6 +80,7 @@ onMounted(async () => {
         </NuxtLink>
       </span>
     </div>
+
     <div>
       <span class="footer-title">{{ $t("nibiru_project") }}</span>
       <div v-for="e in externalLinks" :key="e.name">
@@ -95,6 +98,7 @@ onMounted(async () => {
         </span>
       </div>
     </div>
+
     <div>
       <span class="footer-title">{{ $t("disclaimer") }}</span>
       <ContentMarkdownText :content="data" />

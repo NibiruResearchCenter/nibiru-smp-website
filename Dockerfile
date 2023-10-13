@@ -12,6 +12,9 @@ FROM docker.io/library/node:20-alpine
 
 COPY --from=builder /build/.output /app
 
+ARG VERSION="0.0.0"
+ENV NBR_SMP_WEBSITE_VERSION="${VERSION}"
+
 WORKDIR /app
 
 EXPOSE 3000
