@@ -66,11 +66,7 @@ const prevPage = () => {
 <template>
   <main>
     <ContentMainArea :with-padding="false" class="py-8">
-      <div
-        class="text-center rounded-md text-white bg-base-300 bg-opacity-80 py-4 my-8 mx-24 sm:mx-48 md:mx-64 xl:mx-96 text-2xl"
-      >
-        <h1>{{ $t("poi.title") }}</h1>
-      </div>
+      <ContentPageTitle with-margin-preset :title="$t('title.poi')" />
       <div>
         <div v-if="data === null">
           <h1>Loading...</h1>

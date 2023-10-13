@@ -7,8 +7,9 @@
   },
   "rules": "规则",
   "faq": "FAQ",
-  "poi": {
-    "title": "奇观"
+  "title": {
+    "poi": "奇观",
+    "about": "关于 Nibiru SMP"
   },
   "position": "坐标",
   "minecraft_coordinate": "Minecraft 坐标 (X, Y, Z)",

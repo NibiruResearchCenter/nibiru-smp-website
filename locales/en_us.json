@@ -7,8 +7,9 @@
   },
   "rules": "Rules",
   "faq": "FAQ",
-  "poi": {
-    "title": "Point of Interest"
+  "title": {
+    "poi": "Point of Interest",
+    "about": "About Nibiru SMP"
   },
   "position": "Position",
   "minecraft_coordinate": "Minecraft Coordinate (X, Y, Z)",

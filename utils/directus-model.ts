@@ -46,6 +46,15 @@ export interface NibiruSmpPoi extends DirectusTimestamp {
   cover_image: DirectusSingleImage;
 }
 
+export interface NibiruSmpAboutTranslations {
+  title: string;
+  content: string;
+}
+
+export interface NibiruSmpAbout {
+  translations: NibiruSmpAboutTranslations[];
+}
+
 export interface ExternalLink {
   name: string;
   url: string;
@@ -60,9 +69,4 @@ export interface DisclaimerTranslation {
 export interface IcpPutOn {
   name: string;
   icp: string;
-}
-
-export interface AboutTranslation {
-  language_code: string;
-  content: string;
 }
