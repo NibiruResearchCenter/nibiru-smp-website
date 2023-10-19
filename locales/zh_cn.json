@@ -13,6 +13,7 @@
     "status": "服务器状态",
     "about": "关于 Nibiru SMP"
   },
+  "author": "作者",
   "comming_soon": "即将上线",
   "position": "坐标",
   "minecraft_coordinate": "Minecraft 坐标 (X, Y, Z)",

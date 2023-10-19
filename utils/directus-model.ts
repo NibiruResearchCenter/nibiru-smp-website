@@ -84,7 +84,9 @@ export interface NibiruSmpPostTranslation {
 
 export interface NibiruSmpPost {
   slug: string;
-  cover: DirectusSingleImage;
+  date_updated: string;
+  date_created: string;
+  cover_image: DirectusSingleImage;
   content: string;
   author: NibiruSmpPostAuthor;
   translations: NibiruSmpPostTranslation[];

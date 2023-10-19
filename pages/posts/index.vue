@@ -9,15 +9,17 @@ const maxPage = ref<number>(1);
 
 const fetchPosts = async () => {
   const posts = await getItems<NibiruSmpPost>({
-    collection: "nibiru_smp_posts",
+    collection: "nibiru_smp_post",
     params: {
       fields: [
         "slug",
         "translations.title",
         "translations.summary",
-        "cover.id",
+        "cover_image.id",
         "author.name",
         "author.avatar.id",
+        "date_updated",
+        "date_created",
       ],
       deep: {
         translations: {
@@ -69,7 +71,17 @@ const prevPage = () => {
     <ContentMainArea :with-padding="false" class="py-8">
       <ContentPageTitle with-margin-preset :title="$t('title.posts')" />
       <div>
-        {{ data }}
+        <div v-if="data === null">
+          <h1>Loading...</h1>
+        </div>
+        <div
+          v-for="post in data"
+          v-else
+          :key="post.slug"
+          class="flex flex-wrap justify-center"
+        >
+          <PostsSummaryCard :post="post" />
+        </div>
       </div>
       <div class="flex justify-center">
         <div class="join bg-base-300">
