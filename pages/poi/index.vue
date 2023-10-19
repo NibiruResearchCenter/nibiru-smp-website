@@ -76,13 +76,8 @@ const prevPage = () => {
         <div v-if="data === null">
           <h1>Loading...</h1>
         </div>
-        <div
-          v-for="poi in data"
-          v-else
-          :key="poi.slug"
-          class="flex flex-wrap justify-center"
-        >
-          <PoiSummaryCard :poi="poi" />
+        <div v-else class="flex flex-wrap justify-center">
+          <PoiSummaryCard v-for="poi in data" :key="poi.slug" :poi="poi" />
         </div>
       </div>
       <div class="flex justify-center">

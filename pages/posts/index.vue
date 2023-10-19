@@ -79,13 +79,12 @@ const prevPage = () => {
         <div v-if="data === null">
           <h1>Loading...</h1>
         </div>
-        <div
-          v-for="post in data"
-          v-else
-          :key="post.slug"
-          class="flex flex-wrap justify-center"
-        >
-          <PostsSummaryCard :post="post" />
+        <div v-else class="flex flex-wrap justify-center">
+          <PostsSummaryCard
+            v-for="post in data"
+            :key="post.slug"
+            :post="post"
+          />
         </div>
       </div>
       <div class="flex justify-center">
