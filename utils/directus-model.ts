@@ -70,3 +70,22 @@ export interface IcpPutOn {
   name: string;
   icp: string;
 }
+
+export interface NibiruSmpPostAuthor {
+  name: string;
+  avatar: DirectusSingleImage;
+}
+
+export interface NibiruSmpPostTranslation {
+  title: string;
+  summary: string;
+  article: string;
+}
+
+export interface NibiruSmpPost {
+  slug: string;
+  cover: DirectusSingleImage;
+  content: string;
+  author: NibiruSmpPostAuthor;
+  translations: NibiruSmpPostTranslation[];
+}
