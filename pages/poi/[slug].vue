@@ -131,7 +131,13 @@ const gallery = computed(() => {
                   {{ $t("updated_at") }}
                 </h1>
                 <span class="badge badge-outline my-1 text-slate-200">
-                  {{ getDateOnly(data.date_created) }}
+                  {{
+                    getDateOnly(
+                      data.date_updated === null || data.date_updated === ""
+                        ? data.date_created
+                        : data.date_updated,
+                    )
+                  }}
                 </span>
               </div>
               <div class="m-1 my-3">

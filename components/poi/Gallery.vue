@@ -5,6 +5,8 @@ const props = defineProps<{
 
 const imageId = ref(1);
 
+const { getDateOnly } = useFormattedDatetime();
+
 const nextImage = () => {
   if (props.gallery.length === imageId.value) {
     imageId.value = 1;
@@ -39,7 +41,7 @@ const prevImage = () => {
 
       <div class="absolute bottom-4 right-8">
         <span class="badge badge-sm uppercase">
-          Shot On {{ useFormattedDatetime(gallery[imageId - 1].time) }}
+          Shot On {{ getDateOnly(gallery[imageId - 1].time) }}
         </span>
       </div>
       <div
