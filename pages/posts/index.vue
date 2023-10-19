@@ -21,6 +21,11 @@ const fetchPosts = async () => {
         "date_updated",
         "date_created",
       ],
+      filter: {
+        status: {
+          _eq: "published",
+        },
+      },
       deep: {
         translations: {
           _filter: {

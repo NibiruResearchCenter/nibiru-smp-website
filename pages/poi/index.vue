@@ -18,6 +18,11 @@ const fetchPois = async () => {
         "z",
         "cover_image.id",
       ],
+      filter: {
+        status: {
+          _eq: "published",
+        },
+      },
       deep: {
         translations: {
           _filter: {

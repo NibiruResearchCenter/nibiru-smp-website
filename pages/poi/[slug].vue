@@ -3,6 +3,7 @@ import { NibiruSmpPoi } from "~/utils/directus-model";
 
 const { getItemById } = useDirectusItems();
 const { locale } = useI18n();
+const { getDateOnly } = useFormattedDatetime();
 
 const slug = useRoute().params.slug as string;
 
@@ -27,6 +28,11 @@ const fetchPoi = async () => {
         "gallery.directus_files_id.uploaded_on",
         "authors.minecraft_id_pair_id.*",
       ],
+      filter: {
+        status: {
+          _eq: "published",
+        },
+      },
       deep: {
         translations: {
           _filter: {
@@ -117,7 +123,7 @@ const gallery = computed(() => {
                   {{ $t("created_at") }}
                 </h1>
                 <span class="badge badge-outline my-1 text-slate-200">
-                  {{ useFormattedDatetime(data.date_created) }}
+                  {{ getDateOnly(data.date_created) }}
                 </span>
               </div>
               <div class="m-1 my-3">
@@ -125,7 +131,7 @@ const gallery = computed(() => {
                   {{ $t("updated_at") }}
                 </h1>
                 <span class="badge badge-outline my-1 text-slate-200">
-                  {{ useFormattedDatetime(data.date_created) }}
+                  {{ getDateOnly(data.date_created) }}
                 </span>
               </div>
               <div class="m-1 my-3">
