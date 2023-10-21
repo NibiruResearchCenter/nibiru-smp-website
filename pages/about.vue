@@ -34,6 +34,10 @@ const { data } = await useAsyncData("nibiru_smp_about", () => fetchAbout(), {
 
 <template>
   <main>
+    <Head>
+      <Title>Nibiru SMP | {{ $t("pages.about") }}</Title>
+    </Head>
+
     <ContentMainArea with-padding>
       <ContentPageTitle
         class="mx-4 sm:mx-20 md:mx-40 xl:mx-56"

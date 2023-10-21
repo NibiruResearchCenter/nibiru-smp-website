@@ -33,4 +33,20 @@ export default defineNuxtConfig({
       version: process.env.NBR_SMP_WEBSITE_VERSION ?? "v0.0.0",
     },
   },
+  app: {
+    head: {
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
+      meta: [
+        {
+          name: "description",
+          content: "Nibiru SMP - A Minecraft server for our community.",
+        },
+        {
+          name: "keywords",
+          content: "minecraft,server,nibiru",
+        },
+      ],
+    },
+  },
 });

@@ -48,10 +48,22 @@ const { data } = await useAsyncData(
     watch: [locale],
   },
 );
+
+useSeoMeta({
+  ogTitle: () => data.value?.translations[0].title,
+  ogDescription: () => data.value?.translations[0].summary,
+  ogImage: () =>
+    data.value !== null ? useDirectusAsset(data.value.cover_image.id) : "",
+  twitterCard: "summary_large_image",
+});
 </script>
 
 <template>
   <main>
+    <Head>
+      <Title>Nibiru SMP | {{ $t("pages.posts") }}</Title>
+    </Head>
+
     <ContentMainArea with-padding>
       <div v-if="data === null">
         <Loading text-size="xl" infinity-size="lg" />

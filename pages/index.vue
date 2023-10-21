@@ -1,3 +1,9 @@
+<script setup lang="ts">
+useHead({
+  title: "Nibiru SMP",
+});
+</script>
+
 <template>
   <main>
     <div class="hero min-h-screen">

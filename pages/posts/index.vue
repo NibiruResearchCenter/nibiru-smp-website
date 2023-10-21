@@ -73,6 +73,10 @@ const prevPage = () => {
 
 <template>
   <main>
+    <Head>
+      <Title>Nibiru SMP | {{ $t("pages.posts") }}</Title>
+    </Head>
+
     <ContentMainArea :with-padding="false" class="py-8">
       <ContentPageTitle with-margin-preset :title="$t('title.posts')" />
       <div>

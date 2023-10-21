@@ -69,6 +69,14 @@ const gallery = computed(() => {
 
   return gallery;
 });
+
+useSeoMeta({
+  ogTitle: () => data.value?.translations[0].name,
+  ogDescription: () => data.value?.translations[0].short_summary,
+  ogImage: () =>
+    data.value !== null ? useDirectusAsset(data.value.cover_image.id) : "",
+  twitterCard: "summary_large_image",
+});
 </script>
 
 <template>
